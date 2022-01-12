@@ -6,6 +6,11 @@ const client = redis.createClient({
     host:'redis-server',
     port: 6379
 });
+
+(async () => {
+    await client.connect();
+})();
+
 client.set('visists',0);
 
 app.get('/', (req,res) => {
