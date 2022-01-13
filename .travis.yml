@@ -7,4 +7,4 @@ beofe_install:
   - docker build -t testimage -f Dockerfile.dev .
 
 script:
-  - docker run testImage npm run test -- --coverage
+  - docker run -e CI=true testimage npm run test
