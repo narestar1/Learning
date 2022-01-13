@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+  - docker
+
+beofe_install:
+  - docker build -t testImage -f Dockerfile.dev .
+
+script:
+  - docker run testImage npm run test -- --coverage
